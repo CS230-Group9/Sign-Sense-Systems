@@ -1,0 +1,283 @@
+/* Add box-sizing property for all elements */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  min-height: 100vh;
+  background-color: rgb(20, 20, 20);
+  margin: 0px;
+  overflow-x: hidden; /* Add this line */
+  overflow-y: hidden;
+}
+
+
+h1 {
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+  font-size: clamp(2rem, 3vw, 3.5rem);
+  font-weight: bold;
+  color: white;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+  font-size: clamp(1.5rem, 2,5vw, 3.0rem);
+  font-weight: bold;
+  color: white;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  color: white;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 2rem;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content-container {
+  max-width: 80%; /* Adjust this value to your preference */
+  margin: 0 auto;
+  text-align: left;
+}
+
+
+#company-name {
+  padding: 1rem;
+  font-size: clamp(2.5rem, 3vw, 4rem);
+  font-weight: bold;
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+  color: white;
+  z-index: 3;
+}
+
+#company-name a {
+  text-decoration: none;
+  color: white;
+}
+
+#group-name {
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+  color: white;
+  padding: 1rem;
+  z-index: 3;
+}
+
+.subheader {
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+  color: white;
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  font-weight: normal;
+  text-align: center;
+  z-index: 3;
+  padding: 0.5rem;
+}
+
+
+/* Media query for smaller screen widths */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+  }
+
+  #company-name {
+    text-align: center;
+  }
+
+  #group-name {
+    text-align: center;
+  }
+}
+
+#menu {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+#menu-items {
+  margin-left: clamp(4rem, 20vw, 48rem);
+  position: relative;
+  z-index: 2;
+}
+
+#menu-items-content {
+  /* margin-left: clamp(4rem, 20vw, 48rem); */ /* Remove this line */
+  position: relative;
+  z-index: 2;
+  display: flex; /* Add this line */
+  justify-content: center; /* Add this line */
+}
+
+
+#menu-items li {
+  list-style-type: none;
+}
+
+#menu[data-active-index="0"] > #menu-background-pattern {
+  background-position: 0% -25%;
+}
+
+#menu[data-active-index="1"] > #menu-background-pattern {
+  background-position: 0% -50%;
+}
+
+#menu[data-active-index="2"] > #menu-background-pattern {
+  background-position: 0% -75%;
+}
+
+#menu[data-active-index="3"] > #menu-background-pattern {
+  background-position: 0% -100%;
+}
+
+#menu[data-active-index="4"] > #menu-background-pattern {
+  background-position: 0% -125%;
+}
+
+#menu[data-active-index="5"] > #menu-background-pattern {
+  background-position: 0% -150%;
+}
+
+#menu[data-active-index="0"] > #menu-background-image {
+  background-position: center 45%;
+}
+
+#menu[data-active-index="1"] > #menu-background-image {
+  background-position: center 50%;
+}
+
+#menu[data-active-index="2"] > #menu-background-image {
+  background-position: center 55%;
+}
+
+#menu[data-active-index="3"] > #menu-background-image {
+  background-position: center 60%;
+}
+
+#menu[data-active-index="4"] > #menu-background-image {
+  background-position: center 65%;
+}
+
+#menu[data-active-index="5"] > #menu-background-image {
+  background-position: center 70%;
+}
+
+#menu-items:hover > li > .menu-item {
+  opacity: 0.3;
+}
+
+#menu-items:hover > li:hover > .menu-item {
+  opacity: 1;
+}
+
+.menu-item {
+  color: white;
+  font-size: clamp(2rem, 2.5vw, 3rem);
+  margin: 2rem 0;
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+
+  display: block;
+  text-decoration: none;
+  padding: clamp(0.25rem, 0.5vw, 1rem) 0rem;
+}
+
+#menu-background-pattern {
+  height: 100vh;
+  width: 100vw;
+
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.1) 9%,
+    transparent 9%
+  );
+  background-position: 0% 0%;
+  background-size: 12vmin 12vmin;
+
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+
+  transition: opacity 800ms ease, background-size 800ms ease,
+    background-position 800ms ease;
+}
+
+#menu-items:hover ~ #menu-background-pattern {
+  background-size: 11vmin 11vmin;
+  opacity: 0.5;
+}
+
+#menu-background-image {
+  background-image: url("https://images.pexels.com/photos/4629630/pexels-photo-4629630.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-position: center 40%;
+  background-size: 69vmax;
+  height: 100%;
+  left: 0px;
+  opacity: 0.50;
+  position: absolute;
+  top: 0px;
+  transition: opacity 800ms ease, background-size 800ms ease,
+    background-position 800ms ease;
+  width: 100vw;
+  z-index: 0;
+}
+
+body.business-plan #menu-background-image {
+  background-image: url("https://images.pexels.com/photos/4629633/pexels-photo-4629633.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+}
+
+body.our-name #menu-background-image {
+  background-image: url("https://images.pexels.com/photos/4629633/pexels-photo-4629633.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+}
+
+body.cultural-policy #menu-background-image {
+  background-image: url("https://images.pexels.com/photos/4629624/pexels-photo-4629624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+}
+
+body.core-values #menu-background-image {
+  background-image: url("https://images.pexels.com/photos/4629624/pexels-photo-4629624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+}
+
+body.motivation #menu-background-image {
+  background-image: url("https://images.pexels.com/photos/4629624/pexels-photo-4629624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+}
+
+body.summary #menu-background-image {
+  background-image: url("https://images.pexels.com/photos/4629624/pexels-photo-4629624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+}
+
+body.ethics-policy #menu-background-image {
+  background-image: url("https://images.pexels.com/photos/4629623/pexels-photo-4629623.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+}
+
+body.core-items #menu-background-image {
+  background-image: url("https://images.pexels.com/photos/4629623/pexels-photo-4629623.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+}
+
+
+body.experimentation-and-priorities #menu-background-image {
+  background-image: url("https://images.pexels.com/photos/4629622/pexels-photo-4629622.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+}
+
+#menu-items:hover ~ #menu-background-image {
+  background-size: 100vmax;
+  opacity: 0.1;
+}
