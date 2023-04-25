@@ -1,7 +1,5 @@
-# Parallax Menu
+# Sign Sense Systems
 
-This is a prototype of a parallax menu for a website.
+Sign Sense Systems is a company aiming to revolutionize communication accessibility for the deaf and hard-of-hearing community by creating seamless and accurate computer vision translation technology.
 
-https://www.youtube.com/watch?v=NUeCNvYY_x4&amp;t=4s
-
-https://www.pexels.com/photo/persons-hand-doing-peace-sign-4629630/
+This repository includes our Wiki Site and Live Website! 
