@@ -46,6 +46,8 @@ p {
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 0 2rem;
+  z-index: 10;
+  position: relative;
 }
 
 .title-container {
@@ -75,8 +77,9 @@ p {
   color: white;
 }
 
-#group-name {
+#group-name a {
   font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+  text-decoration: none;
   color: white;
   padding: 1rem;
   z-index: 3;
